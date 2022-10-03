@@ -1,34 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import * as React from 'react';
+import { LoadingState, useApi, clearApiCache } from 'react-api-hook';
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [products, loadingProducts, loadProducts] = useApi({
+		url: 'https://dummyjson.com/products/{id}',
+		initialValue: [],
+		cacheKey: true,
+		parallelKey: true,
+		suspense: true,
+	});
+	const [products1, loadingProducts1, loadProducts1] = useApi({
+		url: '/products/{id}',
+		initialValue: [],
+		parallelKey: true,
+	});
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+	if (loadingProducts === LoadingState.Pending) {
+		return <h1>Loading...</h1>;
+	}
+
+	return (
+		<div>
+			<button
+				onClick={async () => {
+					const data = await loadProducts({ api: { cacheKey: false }, params: { id: 1 } });
+					console.log(data);
+					loadProducts1({ api: { cacheKey: true }, params: { id: 2 } });
+				}}
+			>
+				Load
+			</button>
+			<hr />
+			{JSON.stringify(products)}
+			<hr />
+			{JSON.stringify(products1)}
+		</div>
+	);
 }
 
-export default App
+export default App;

@@ -6,8 +6,6 @@ declare interface UseApiProviderProps {
 	children: React.ReactNode;
 }
 
-const UseApiProvider: React.FunctionComponent<UseApiProviderProps> = ({ config, children }) => {
+export const UseApiProvider: React.FunctionComponent<UseApiProviderProps> = ({ config, children }) => {
 	return <UseApiContext.Provider value={config} children={children} />;
 };
-
-export default UseApiProvider;
