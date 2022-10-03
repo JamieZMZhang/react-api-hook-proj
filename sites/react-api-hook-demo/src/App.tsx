@@ -5,9 +5,7 @@ function App() {
 	const [products, loadingProducts, loadProducts] = useApi({
 		url: 'https://dummyjson.com/products/{id}',
 		initialValue: [],
-		cacheKey: true,
-		parallelKey: true,
-		suspense: true,
+		parallelKey: '1',
 	});
 	const [products1, loadingProducts1, loadProducts1] = useApi({
 		url: '/products/{id}',

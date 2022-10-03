@@ -118,6 +118,7 @@ export function useApi<TPayload = any, TData = TPayload>(params: UseApiParams<TP
 
 			let axiosRequest: AxiosRequestConfig<any> = {
 				...request.requestConfig,
+				url: requestUrl,
 				params: { ...request.query, ...request.requestConfig?.params },
 				method,
 				data: request.body,
@@ -137,19 +138,21 @@ export function useApi<TPayload = any, TData = TPayload>(params: UseApiParams<TP
 			if (typeof params.onBeforeRequest === 'function') {
 				axiosRequest = params.onBeforeRequest(axiosRequest);
 			}
-			axios(requestUrl, axiosRequest)
+			axios(axiosRequest)
 				.then(response => (typeof config.onResponse === 'function' && !config.onResponse(response) ? null : response))
 				.then(response => {
 					if (!response) return;
 					if (cacheKey) {
 						cacheStore[cacheKey] = response;
 					}
+					ongoingRequest!.next(response);
+				})
+				.catch(reason => ongoingRequest!.error(reason))
+				.finally(() => {
 					if (parallelKey && parallelStore[parallelKey]) {
 						delete parallelStore[parallelKey];
 					}
-					ongoingRequest!.next(response);
-				})
-				.catch(reason => ongoingRequest!.error(reason));
+				});
 		}
 		const unsubscribe = ongoingRequest.subscribe(onSuccess, onError);
 

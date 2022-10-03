@@ -1,23 +1,25 @@
 {
-	"name": "react-api-hook",
+	"name": "@asxasdfghjkl/react-use-api",
 	"private": false,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"main": "./src/index.ts",
-	"types": "./dist",
+	"license": "MIT",
+	"author": "asxasdfghjkl",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"axios": "^0.27.2",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"axios": "^0.22.0",
+		"react": "^16.8.0",
+		"react-dom": "^16.8.0"
 	},
 	"peerDependencies": {
-		"react": ">=18",
-		"react-dom": ">=18"
+		"react": ">=16.8",
+		"react-dom": ">=16.8",
+		"axios": "^0.22.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.17",
