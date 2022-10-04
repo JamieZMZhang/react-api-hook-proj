@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { LoadingState, useApi, clearApiCache } from 'react-api-hook';
+import { LoadingState, useApi } from '@asxasdfghjkl/react-use-api';
 
 function App() {
 	const [products, loadingProducts, loadProducts] = useApi({
