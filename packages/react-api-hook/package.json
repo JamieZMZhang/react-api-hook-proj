@@ -1,7 +1,7 @@
 {
 	"name": "@asxasdfghjkl/react-use-api",
 	"private": false,
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
 	"main": "./src/index.ts",
 	"license": "MIT",
@@ -13,9 +13,9 @@
 	},
 	"dependencies": {},
 	"peerDependencies": {
+		"axios": ">=0.22.0",
 		"react": ">=16.8",
-		"react-dom": ">=16.8",
-		"axios": ">=0.22.0"
+		"react-dom": ">=16.8"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.17",
