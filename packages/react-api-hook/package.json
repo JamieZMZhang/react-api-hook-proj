@@ -6,6 +6,11 @@
 	"main": "./src/index.ts",
 	"license": "MIT",
 	"author": "asxasdfghjkl",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/asxasdfghjkl/react-api-hook-proj",
+		"directory": "packages/react-api-hook/"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
