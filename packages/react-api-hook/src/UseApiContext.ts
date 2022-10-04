@@ -1,6 +1,5 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 import React from 'react';
-import { ApiRequestParams } from './types';
 
 export type UseApiConfig = {
 	baseUrl?: string;

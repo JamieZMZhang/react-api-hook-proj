@@ -1,12 +1,12 @@
-import axios, { Axios, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import React from 'react';
-import { LoadingState } from './LoadingState';
 import { makePromise } from './internal/makePromise';
+import { RequestSubject } from './internal/RequestSubject';
+import { LoadingState } from './LoadingState';
 import { KeyValueObject } from './types';
 import { ApiRequestParams } from './types/ApiRequestParams';
 import { UseApiContext } from './UseApiContext';
 import { joinUrl } from './utilities/url';
-import { RequestSubject } from './internal/RequestSubject';
 
 export type UseApiParams<TPayload, TData> = {
 	url: string;
