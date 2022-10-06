@@ -11,14 +11,15 @@ export default defineConfig({
 		}),
 	],
 	build: {
+		outDir: 'lib',
 		lib: {
 			entry: path.resolve(__dirname, 'src/index.ts'),
-			name: 'react-api-hook',
-			formats: ['es', 'umd'],
-			fileName: format => `react-api-hook.${format}.js`,
+			name: 'react-use-api',
+			formats: ['es', 'umd', 'cjs'],
+			fileName: format => `index.${format}.js`,
 		},
 		rollupOptions: {
-			external: ['react', 'react-dom'],
+			external: ['react', 'react-dom', 'axios'],
 			output: {
 				globals: {
 					react: 'React',
@@ -28,4 +29,3 @@ export default defineConfig({
 		},
 	},
 });
-

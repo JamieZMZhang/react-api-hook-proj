@@ -60,7 +60,7 @@ export function useApi<TPayload = any, TData = TPayload>(params: UseApiParams<TP
 				debounceRef.current = undefined;
 			}
 			return new Promise<TData>((resolve, reject) => {
-				debounceRef.current = setTimeout(() => send().then(resolve).catch(reject), params.debounce);
+				debounceRef.current = window.setTimeout(() => send().then(resolve).catch(reject), params.debounce);
 			});
 		}
 		return send();
