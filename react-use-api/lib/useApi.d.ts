@@ -10,6 +10,7 @@ export declare type UseApiParams<TPayload, TData> = {
     parallelKey?: string | boolean;
     suspense?: boolean;
     debounce?: number;
+    retry?: number;
     onBeforeRequest?: (request: AxiosRequestConfig<any>) => AxiosRequestConfig<any>;
     onSuccess?: (payload: TPayload, response: AxiosResponse<any, any>, resquest: ApiRequestParams) => TData;
     onError?: (error: any, setData: React.Dispatch<React.SetStateAction<TData>>) => void;

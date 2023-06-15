@@ -16,23 +16,23 @@ npm install @asxasdfghjkl/react-use-api axios
 import { useApi, LoadingState } from '@asxasdfghjkl/react-use-api';
 
 const DataDisplay = () => {
-	const [payload, loading, load] = useApi({
-		url: 'https://jsonplaceholder.typicode.com/todos/{id}',
-		initialValue: null,
-	});
+  const [payload, loading, load] = useApi({
+    url: 'https://jsonplaceholder.typicode.com/todos/{id}',
+    initialValue: null,
+  });
 
-	React.useEffect(() => {
-		load({
-			params: { id: 1 },
-			// query: { action: 'test' },
-			// body: { data: 'hi' }
-		});
-	}, []);
+  React.useEffect(() => {
+    load({
+      params: { id: 1 },
+      // query: { action: 'test' },
+      // body: { data: 'hi' }
+    });
+  }, []);
 
-	if (loading === LoadingState.Pending) {
-		return <h1>Loading...</h1>;
-	}
+  if (loading === LoadingState.Pending) {
+    return <h1>Loading...</h1>;
+  }
 
-	return JSON.stringify(payload);
+  return JSON.stringify(payload);
 };
 ```
