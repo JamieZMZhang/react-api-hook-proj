@@ -1,40 +1,40 @@
 {
-	"name": "@asxasdfghjkl/react-use-api",
-	"private": false,
-	"version": "1.0.2",
-	"type": "module",
-	"main": "./lib/index.cjs.js",
-	"module": "./lib/index.es.js",
-	"types": "./lib/index.d.ts",
-	"license": "MIT",
-	"author": "asxasdfghjkl",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/asxasdfghjkl/react-api-hook-proj",
-		"directory": "react-use-api"
-	},
-	"scripts": {
-		"dev": "vite",
-		"build": "tsc && vite build",
-		"preview": "vite preview"
-	},
-	"dependencies": {},
-	"peerDependencies": {
-		"axios": ">=0.22.0",
-		"react": ">=16.8",
-		"react-dom": ">=16.8"
-	},
-	"devDependencies": {
-		"@types/node": "^18.8.3",
-		"@types/react": "^18.0.17",
-		"@types/react-dom": "^18.0.6",
-		"@vitejs/plugin-react": "^2.1.0",
-		"typescript": "^4.6.4",
-		"vite": "^3.1.0",
-		"vite-plugin-dts": "^1.6.4"
-	},
-	"files": [
-		"./lib",
-		"./package.json"
-	]
+  "name": "@asxasdfghjkl/react-use-api",
+  "private": false,
+  "version": "1.1.1",
+  "type": "module",
+  "main": "./lib/index.cjs.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "license": "MIT",
+  "author": "asxasdfghjkl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asxasdfghjkl/react-api-hook-proj",
+    "directory": "react-use-api"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "axios": ">=0.22.0",
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
+  "devDependencies": {
+    "@types/node": "^18.8.3",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.4"
+  },
+  "files": [
+    "./lib",
+    "./package.json"
+  ]
 }

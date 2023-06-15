@@ -165,7 +165,6 @@ export function useApi<TPayload = any, TData = TPayload>(
       if (typeof params.onBeforeRequest === 'function') {
         axiosRequest = params.onBeforeRequest(axiosRequest);
       }
-      debugger;
       const sendCall = () => {
         axios(axiosRequest)
           .then((response) =>
